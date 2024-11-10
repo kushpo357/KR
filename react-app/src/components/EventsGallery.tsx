@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import Navbar from './navbar/Navbar';
 const categories = [
   {
     name: 'Event 1',
@@ -107,6 +107,8 @@ export default function EventsGallery() {
   const filteredCategories = categories.filter(category => category.day === selectedDay);
 
   return (
+    <>
+    <Navbar></Navbar>
     <div className="bg-white">
       <div className="max-w-xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Events of KR</h2>
@@ -124,7 +126,7 @@ export default function EventsGallery() {
               className="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
               value={selectedDay}
               onChange={(e) => setSelectedDay(e.target.value)}
-            >
+              >
               {tabs.map((tab) => (
                 <option key={tab.name} value={tab.day}>{tab.name}</option>
               ))}
@@ -136,13 +138,13 @@ export default function EventsGallery() {
             <nav className="flex space-x-4" aria-label="Tabs">
               {tabs.map((tab) => (
                 <button
-                  key={tab.name}
-                  onClick={() => setSelectedDay(tab.day)}
-                  className={classNames(
-                    selectedDay === tab.day ? 'bg-gray-100 text-gray-700' : 'text-gray-500 hover:text-gray-700',
-                    'px-3 py-2 font-medium text-sm rounded-md'
-                  )}
-                  aria-current={selectedDay === tab.day ? 'page' : undefined}
+                key={tab.name}
+                onClick={() => setSelectedDay(tab.day)}
+                className={classNames(
+                  selectedDay === tab.day ? 'bg-gray-100 text-gray-700' : 'text-gray-500 hover:text-gray-700',
+                  'px-3 py-2 font-medium text-sm rounded-md'
+                )}
+                aria-current={selectedDay === tab.day ? 'page' : undefined}
                 >
                   {tab.name}
                 </button>
@@ -159,12 +161,12 @@ export default function EventsGallery() {
                 <div
                   aria-hidden="true"
                   className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
-                >
+                  >
                   <img
                     src={category.imageSrc}
                     alt={category.imageAlt}
                     className="w-full h-full object-center object-cover"
-                  />
+                    />
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-gray-900">{category.name}</h3>
                 <p className="mt-2 text-sm text-gray-500">{category.description}</p>
@@ -176,5 +178,6 @@ export default function EventsGallery() {
         </div>
       </div>
     </div>
+    </>
   );
 }

@@ -2,9 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-/* *{
-  background-color: black;
-} */
-a{
-  text-decoration: none;
-}
+

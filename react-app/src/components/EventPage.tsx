@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Disclosure, RadioGroup, Tab } from '@headlessui/react'
 import { StarIcon } from '@heroicons/react/solid'
 import { HeartIcon, MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
-
+import Navbar from './navbar/Navbar'
 const product = {
   name: 'Event 1',
   title: 'Event 1 Details',
@@ -54,6 +54,8 @@ export default function EventPage() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
 
   return (
+    <>
+    <Navbar></Navbar>
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="lg:flex lg:gap-x-8">
@@ -72,7 +74,7 @@ export default function EventPage() {
                       src={image.src}
                       alt={image.alt}
                       className="w-full h-full object-center object-cover sm:rounded-lg"
-                    />
+                      />
                   </Tab.Panel>
                 ))}
               </Tab.Panels>
@@ -117,6 +119,7 @@ export default function EventPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

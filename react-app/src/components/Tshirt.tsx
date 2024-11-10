@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Disclosure, RadioGroup, Tab } from '@headlessui/react'
 import { StarIcon } from '@heroicons/react/solid'
 import { HeartIcon, MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
-
+import Navbar from './navbar/Navbar'
 const product = {
   name: 'KR T-SHIRT',
   price: '₹140',
@@ -49,6 +49,8 @@ export default function Tshirt() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
 
   return (
+    <>
+    <Navbar></Navbar>
     <div className="bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
@@ -65,7 +67,7 @@ export default function Tshirt() {
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-center object-cover sm:rounded-lg"
-                  />
+                    />
                 </Tab.Panel>
               ))}
             </Tab.Panels>
@@ -88,51 +90,51 @@ export default function Tshirt() {
               <div
                 className="text-base text-gray-700 space-y-6"
                 dangerouslySetInnerHTML={{ __html: product.description }}
-              />
+                />
             </div>
 
             <form className="mt-6">
               {/* Colors */}
 {/*              <div>
                 <h3 className="text-sm text-gray-600">Color</h3>
-
+                
                 <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-2">
-                  <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
-                  <div className="flex items-center space-x-3">
+                <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
+                <div className="flex items-center space-x-3">
                     {product.colors.map((color) => (
                       <RadioGroup.Option
-                        key={color.name}
-                        value={color}
-                        className={({ active, checked }) =>
-                          classNames(
-                            color.selectedColor,
-                            active && checked ? 'ring ring-offset-1' : '',
-                            !active && checked ? 'ring-2' : '',
-                            '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none'
-                          )
-                        }
+                      key={color.name}
+                      value={color}
+                      className={({ active, checked }) =>
+                      classNames(
+                      color.selectedColor,
+                      active && checked ? 'ring ring-offset-1' : '',
+                      !active && checked ? 'ring-2' : '',
+                      '-m-0.5 relative p-0.5 rounded-full flex items-center justify-center cursor-pointer focus:outline-none'
+                      )
+                      }
                       >
                         <RadioGroup.Label as="p" className="sr-only">
                           {color.name}
-                        </RadioGroup.Label>
-                        <span
+                          </RadioGroup.Label>
+                          <span
                           aria-hidden="true"
                           className={classNames(
                             color.bgColor,
                             'h-8 w-8 border border-black border-opacity-10 rounded-full'
-                          )}
-                        />
-                      </RadioGroup.Option>
-                    ))}
-                  </div>
-                </RadioGroup>
-              </div>*/}
+                            )}
+                            />
+                            </RadioGroup.Option>
+                            ))}
+                            </div>
+                            </RadioGroup>
+                            </div>*/}
 
               <div className="mt-10 flex sm:flex-col1">
                 <button
                   type="submit"
                   className="max-w-xs flex-1 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500 sm:w-full"
-                >
+                  >
                   Buy Now
                 </button>
 
@@ -149,5 +151,6 @@ export default function Tshirt() {
         </div>
       </div>
     </div>
-  )
+    </>
+  );
 }
