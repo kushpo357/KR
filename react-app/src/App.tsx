@@ -7,6 +7,8 @@ import Coordinators from './components/Coordinators';
 import EventPage from './components/EventPage';
 import EventsGallery from './components/EventsGallery';
 import Tshirt from './components/Tshirt';
+import Test from './components/Test';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/eventPage" element={<EventPage />} />
         <Route path="/eventGallery" element={<EventsGallery />} />
         <Route path="/tShirtPage" element={<Tshirt />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
