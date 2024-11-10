@@ -5,7 +5,7 @@ import { HeartIcon, MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
 
 const product = {
   name: 'Event 1',
-  title: 'Event 1 Details', // Renamed from 'details' to 'title' to avoid conflict
+  title: 'Event 1 Details',
   rules: 'Rules',
   description: 'Description',
   descriptionText: `
@@ -32,7 +32,7 @@ const product = {
   ],
   details: [
     {
-      name: 'details',
+      name: 'Features',
       items: [
         'Multiple strap configurations',
         'Spacious interior with top zip',
@@ -43,7 +43,6 @@ const product = {
         'Water-resistant',
       ],
     },
-    // More sections can be added here...
   ],
 };
 
@@ -56,77 +55,68 @@ export default function EventPage() {
 
   return (
     <div className="bg-white">
-      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-x-8 lg:items-start">
-          {/* Image gallery */}
-          <Tab.Group as="div" className="flex flex-col-reverse">
-            {/* Image selector */}
-            <div className="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
-              {/* Placeholder for image selector if needed */}
-            </div>
+      <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div className="lg:flex lg:gap-x-8">
+          {/* Image on the left */}
+          <div className="lg:w-1/2">
+            <Tab.Group as="div" className="flex flex-col-reverse">
+              {/* Image selector */}
+              <div className="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
+                {/* Placeholder for image selector if needed */}
+              </div>
 
-            <Tab.Panels className="w-full aspect-w-1 aspect-h-1">
-              {product.images.map((image) => (
-                <Tab.Panel key={image.id}>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-center object-cover sm:rounded-lg"
-                  />
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
-
-          {/* Product info */}
-          <div className="mt-10 px-4 sm:px-0 sm:mt-16 lg:mt-0">
-            {/* Product Title */}
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">{product.title}</h1>
-
-            {/* Description Section */}
-            <div className="mt-6">
-              <h3 className="sr-only">Description</h3>
-              <div
-                className="text-base text-gray-700 space-y-6"
-                dangerouslySetInnerHTML={{ __html: product.descriptionText }}
-              />
-            </div>
-
-            {/* Rules Section */}
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 mt-10">{product.rules}</h2>
-            <div className="mt-6">
-              <h3 className="sr-only">Rules</h3>
-              <div
-                className="text-base text-gray-700 space-y-6"
-                dangerouslySetInnerHTML={{ __html: product.rulesText }}
-              />
-            </div>
-
-            {/* Features Section */}
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 mt-10">Features</h2>
-            <div className="mt-6">
-              {product.details.map((section) => (
-                <div key={section.name}>
-                  <h3 className="text-lg font-semibold text-gray-900">{section.name}</h3>
-                  <ul className="list-disc pl-5 mt-2 text-base text-gray-700">
-                    {section.items.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+              <Tab.Panels className="w-full aspect-w-1 aspect-h-1">
+                {product.images.map((image) => (
+                  <Tab.Panel key={image.id}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-center object-cover sm:rounded-lg"
+                    />
+                  </Tab.Panel>
+                ))}
+              </Tab.Panels>
+            </Tab.Group>
           </div>
 
-          {/* Additional details section */}
-          <section aria-labelledby="details-heading" className="mt-12">
-            <h2 id="details-heading" className="sr-only">
-              Additional details
-            </h2>
-            {/* Insert additional details here if needed */}
-          </section>
+          {/* Product info on the right */}
+          <div className="lg:w-1/2">
+            <div className="lg:grid lg:grid-cols-1 lg:gap-y-8">
+              <div className="lg:grid lg:grid-cols-2 lg:gap-x-8">
+                {/* Event 1 Details Box */}
+                <div className="border border-gray-300 p-6">
+                  <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">{product.title}</h1>
+                  <div className="mt-6 text-base text-gray-700" dangerouslySetInnerHTML={{ __html: product.descriptionText }} />
+                </div>
+
+                {/* Rules Box */}
+                <div className="border border-gray-300 p-6">
+                  <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">{product.rules}</h2>
+                  <div className="mt-6 text-base text-gray-700" dangerouslySetInnerHTML={{ __html: product.rulesText }} />
+                </div>
+              </div>
+
+              {/* Features Box (occupies full width below the above two) */}
+              <div className="border border-gray-300 p-6 mt-8">
+                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">Features</h2>
+                <div className="mt-6">
+                  {product.details.map((section) => (
+                    <div key={section.name}>
+                      <h3 className="text-lg font-semibold text-gray-900">{section.name}</h3>
+                      <ul className="list-disc pl-5 mt-2 text-base text-gray-700">
+                        {section.items.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
