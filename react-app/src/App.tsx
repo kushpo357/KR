@@ -8,7 +8,7 @@ import EventPage from './components/EventPage';
 import EventsGallery from './components/EventsGallery';
 import Tshirt from './components/Tshirt';
 import Test from './components/Test';
-
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (
