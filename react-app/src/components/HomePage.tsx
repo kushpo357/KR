@@ -7,16 +7,16 @@ const HomePage = () => {
       <h1>Home Page</h1>
       <div>
         <Link to="/coordinators">
-          <button>Coordinators</button>
+          <div><button>Coordinators</button></div>
         </Link>
         <Link to="/eventPage">
-          <button>Event Page</button>
+          <div><button>Event Page</button></div>
         </Link>
         <Link to="/eventGallery">
-          <button>Event Gallery</button>
+          <div><button>Event Gallery</button></div>
         </Link>
         <Link to="/tShirtPage">
-          <button>T-shirt Page</button>
+          <div><button>T-shirt Page</button></div>
         </Link>
       </div>
     </div>
