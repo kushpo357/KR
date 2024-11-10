@@ -1,16 +1,25 @@
-import EventPage from './components/EventPage'
-import Tshirt from './components/Tshirt'
-import EventsGallery from './components/EventsGallery'
-import Coordinators from './components/Coordinators'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+// Import the components/pages
+import HomePage from './components/HomePage';
+import Coordinators from './components/Coordinators';
+import EventPage from './components/EventPage';
+import EventsGallery from './components/EventsGallery';
+import Tshirt from './components/Tshirt';
 
-export default function App() {
+function App() {
   return (
-    // <div className="bg-blue-500 text-white p-4 rounded">
-    <div>
-      <Coordinators/>
-{/*      <h1 className="text-2xl font-bold">Hello, Tailwind CSS!</h1>
-      <p>This is a Vite + React app styled with Tailwind.</p>*/}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/coordinators" element={<Coordinators />} />
+        <Route path="/eventPage" element={<EventPage />} />
+        <Route path="/eventGallery" element={<EventsGallery />} />
+        <Route path="/tShirtPage" element={<Tshirt />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
