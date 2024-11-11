@@ -4,8 +4,8 @@ import { StarIcon } from '@heroicons/react/solid'
 import { HeartIcon, MinusSmIcon, PlusSmIcon } from '@heroicons/react/outline'
 import Navbar from './navbar/Navbar'
 const product = {
-  name: 'Event 1',
-  title: 'Event 1 Details',
+  name: 'Event ',
+  title: 'Event  Details',
   rules: 'Rules',
   description: 'Description',
   descriptionText: `

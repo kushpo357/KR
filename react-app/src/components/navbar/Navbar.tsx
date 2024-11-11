@@ -1,27 +1,36 @@
 import React from "react";
-import Coordinators from "../Coordinators";
-import logo from "../../assets/gandaBherunda.png";
-import { Link } from 'react-router-dom';
-import HomePage from "../HomePage";
-import EventsGallery from "../EventsGallery";
+import { Link } from "react-router-dom";
+import logo from "../../assets/gandabherunda.png";
 import "./Navbar.css";
+
 function Navbar() {
   return (
     <div className="nav">
-      <img src="../../assets/gandabherunda.png" alt="" className="logo" />
+      <Link to="/" className="logo-container">
+        <img src={logo} alt="Logo" className="logo" />
+        <h3>Karnataka Rajyotsava</h3>
+      </Link>
       <ul>
-        <li><Link to="/">
-          <div><button>Home</button></div>
-        </Link></li>
-        <li><Link to="/coordinators">
-          <div><button>Contact us</button></div>
-        </Link></li>
-        <li><Link to="/eventGallery">
-          <div><button>Events</button></div>
-        </Link></li>
-        <li><Link to="/tShirtPage">
-          <div><button>T-shirt</button></div>
-        </Link></li>
+        <li>
+          <Link to="/">
+            <button>Home</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/coordinators">
+            <button>Contact Us</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/eventGallery">
+            <button>Events</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/tShirtPage">
+            <button>T-Shirt</button>
+          </Link>
+        </li>
       </ul>
     </div>
   );
