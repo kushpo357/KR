@@ -4,7 +4,7 @@ import krtshirtImage from '../assets/tshirtkr.jpg';
 
 const product = {
   name: 'ಕನ್ನಡ Rajyotsava',
-  price: '₹350',
+  price: '₹360',
   images: [
     {
       id: 1,
@@ -13,7 +13,7 @@ const product = {
     },
   ],
   description: `
-    <p>Get your merch now!</p>
+    <p>Get your Shirt now!</p>
   `,
 };
 

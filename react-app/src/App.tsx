@@ -43,7 +43,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Test />} />
         <Route path="/coordinators" element={<Coordinators />} />
         <Route path="/eventGallery" element={<EventsGallery />} />
         <Route path="/tShirtPage" element={<Tshirt />} />

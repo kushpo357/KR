@@ -7,7 +7,7 @@ function Navbar() {
     <div className="nav">
       <Link to="/" className="logo-container">
         <img src={logo} alt="Logo" className="logo" />
-        <h3>Karnataka Rajyotsava</h3>
+        <h3>ಕನ್ನಡ Rajyotsava</h3>
       </Link>
       <ul>
         <li>
