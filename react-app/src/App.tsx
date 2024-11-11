@@ -42,8 +42,9 @@ import Test from "./components/Test";
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Test />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/coordinators" element={<Coordinators />} />
         <Route path="/eventGallery" element={<EventsGallery />} />
         <Route path="/tShirtPage" element={<Tshirt />} />

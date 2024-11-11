@@ -109,7 +109,7 @@ export default function Example() {
                     {feature.name}
                   </motion.h3>
                   <motion.p
-                    className="mt-2 text-sm md:text-[1.2vw] text-white"
+                    className="mt-2 text-sm md:text-[1.2vw] leading-normal text-white"
                     variants={animationVariants}
                   >
                     {feature.description}

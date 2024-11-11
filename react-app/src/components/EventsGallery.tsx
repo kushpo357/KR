@@ -13,6 +13,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
+
 export default function EventsGallery() {
   const [categories, setCategories] = useState([]);
   const [selectedDay, setSelectedDay] = useState(tabs[0].day);
@@ -82,7 +83,6 @@ export default function EventsGallery() {
             </nav>
           </div>
         </div>
-
         {/* Event items grid */}
         <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
           {filteredCategories.length > 0 ? (

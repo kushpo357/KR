@@ -13,6 +13,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
+
 export default function EventsGallery() {
   const [categories, setCategories] = useState([]);
   const [selectedDay, setSelectedDay] = useState(tabs[0].day);
@@ -102,6 +103,7 @@ export default function EventsGallery() {
           ) : (
             <p className="text-gray-500">No events for this day.</p>
           )}
+
         </div>
       </div>
     </div>
