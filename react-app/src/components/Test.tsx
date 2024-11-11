@@ -1,16 +1,12 @@
-import { Fragment } from "react";
 import Navbar from "./navbar/Navbar";
 import msrit from "../assets/msrit.jpg";
 import deca from "../assets/deca.png";
 import KR from "../assets/KR.png";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const features = [
   {
-    name: "About MSRIT",
+    name: "About M.S.R.I.T",
     description:
       "Established in 1962 by the visionary Dr. M.S. Ramaiah, Ramaiah Institute of Technology has only grown over the years and is one of the most prestigious engineering institutions in India. Offering a variety of courses at UG, PG and Doctorate level, RIT has established itself as a centre of excellence for high quality education. Industry oriented teaching programs and high placement records, guarantee aspiring students a bright future in whichever field they choose to pursue. It stands strong as a bastion of knowledge and free thinking.",
     imageSrc: msrit,
@@ -19,16 +15,16 @@ const features = [
   {
     name: "About DECA",
     description:
-      "If you're a student at MSRIT and interested in building leadership skills and exploring entrepreneurship, DECA is a great club to join. It's part of a global organization that helps students get hands-on experience with business-related competitions, case studies, and events. Being a part of DECA means you can engage in activities like pitching startup ideas, developing business strategies, and networking with industry professionals.",
+      "If you're a student at MSRIT and interested in building leadership skills and exploring entrepreneurship, DECA is a great club to join. It's part of a global organization that helps students get hands-on experience with business-related competitions, case studies, and events. Being a part of DECA means you can engage in activities like pitching startup ideas, developing business strategies, and networking with industry professionals. It's not just about learning theroy: you get to challenge yourself in real world scenarios, which looks fantastic on your resume. plus, MSRIT's ecosystem is super supportive, with other clubs like IEEE and TEDx giving you diverse opportunities to grow. whether you're into tech or business, DECA gives you the platform to explore your potential ina afun,competitive, and grow-oriented environment.",
     imageSrc: deca,
     imageAlt: "DECA logo.",
   },
   {
-    name: "About Kannada Rajyotsava",
+    name: "About ಕನ್ನಡ Rajyotsava",
     description:
-      "This has always been the most celebrated event during any given odd semester. Held in the month of November, Kannada Rajyotsava brings out the culture of the State in full fervour and colour. Eminent litterateurs and well-known actors are invited to our campus to add to the celebrations.",
+      "This has always been the most celebrated event during any given odd semester. Held in the month of November, Kannada Rajyotsava brings out the culture of the State in full fervour and colour. Eminent litterateurs and well-known actors are invited to our campus to add to the celebrations. Our institute takes pride in the fact that many non-kannadiga students come forward to work as volunteera and contribute to the success of rajyastava. Many competitive events are held and prizes are distributed on the final day.",
     imageSrc: KR,
-    imageAlt: "Kannada Rajyotsava celebration.",
+    imageAlt: " Rajyotsava celebration.",
   },
 ];
 
@@ -36,38 +32,19 @@ export default function Example() {
   return (
     <>
       <Navbar></Navbar>
-      <div className="bg-white pt-[80px]">
+      <div className="bg-[#0B0B0B] pt-[80px]">
         {/* Hero Section */}
         {/* Hero Section */}
-        <main>
-          <div className="relative">
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-              <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
-                <div className="absolute inset-0">
-                  <img
-                    className="h-full w-full object-cover"
-                    src="https://w0.peakpx.com/wallpaper/410/412/HD-wallpaper-plain-black-black.jpg"
-                    alt="Background image"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-800 to-indigo-700 mix-blend-multiply" />
-                </div>
-                <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                  <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    <span className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600">
-                      ಕನ್ನಡ
-                    </span>
-                    <span className="block bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600">
-                      Rajyotsava
-                    </span>
-                    <span className="block text-indigo-200">2024</span>
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-
+        <main className="flex pt-[9vw] justify-center h-[40vh] bg-[#0B0B0B]">
+  <div className="relative">
+    <p className="text-2xl flex justify-center text-white ">M.S.R.I.T presents</p>
+    <p className="text-7xl p-[1vw] md:text-9xl font-extrabold tracking-tight bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
+      ಕನ್ನಡ Rajyotsava
+    </p>
+    <p className="text-5xl flex pt-[1vw] justify-center text-white ">೨೦೨೪
+</p>
+  </div>
+</main>
         {/* Features Section */}
         <div className="max-w-full mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <div className="mt-11 space-y-16 sm:mt-16">
@@ -89,10 +66,10 @@ export default function Example() {
 
                 {/* Text */}
                 <div className="w-full md:w-2/3">
-                  <h3 className="text-2xl font-medium text-gray-900">
+                  <h3 className="text-2xl font-medium text-[#E7602A]">
                     {feature.name}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-500">
+                  <p className="mt-2 text-[1.2vw] text-white">
                     {feature.description}
                   </p>
                 </div>
