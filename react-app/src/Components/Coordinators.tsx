@@ -1,7 +1,5 @@
-
 import InstagramIcon from '/src/assets/insta.svg'; // Import the Instagram SVG icon
 import Navbar from "./navbar/Navbar";
-import logo from '../assets/logo.jpg'; // Import the image from the assets folder
 
 const people = [
   {
@@ -53,89 +51,96 @@ export default function Coordinators() {
   const thirdYearCoordinators = people.slice(3);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 h-[100vh] bg-[#000000]">
-      {/* Left Side Image */}
-      <div className="bg-cover my-[11vw] mx-[8vh] bg-center h-[65vh] w-[40vw]" style={{ backgroundImage: "url('/src/assets/gb.jpg')" }}>
-      </div>
+    <>
+      <Navbar />
+      <div className="grid grid-cols-1 md:grid-cols-2 h-[100vh] bg-[#000000]">
+        {/* Left Side Image */}
+        <div className="bg-cover my-[11vw] mx-[8vh] bg-center h-[65vh] w-[40vw]" style={{ backgroundImage: "url('/src/assets/gb.jpg')" }}>
+        </div>
 
-      {/* Right Side Content */}
-      <div className="bg-[#000000] py-12 mx-[8vh] -ml-[10vh] max-h-[100vh] overflow-hidden">
-        <div className="max-w-[60vh] mx-auto py-[8vh] space-y-12 text-center">
-          {/* 4th Year Coordinators */}
-          <div className="space-y-5">
-            <h2 className="text-[3vh] font-bold tracking-tight text-[#FFEAAC]">
-              Meet our 4<sup className="align-super text-[1.5vh]">th</sup> Year Coordinators
-            </h2>
-          </div>
-          <ul
-            role="list"
-            className="space-y-[1vw] sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-[6vh]"
-          >
-            {fourthYearCoordinators.map((person) => (
-              <li key={person.name} className="relative bg-[#151515] pb-[.5vw] rounded-lg shadow-md">
-                <div className="relative">
-                  <img
-                    src={person.photo}
-                    alt=""
-                    className="mx-auto h-[9vw] w-[9vw]  object-cover"
-                  />
-                  <a
-                    href={person.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute top-[.5vw] right-[.5vw]"
-                  >
-                    <img src={InstagramIcon} alt="Instagram" className="h-[1.5vw] w-[1.5vw]" />
-                  </a>
-                </div>
-                <div className="text-center mt-[.1vw] space-y-1">
-                  <h3 className="text-[#ffffff] font-semibold">{person.name}</h3>
-                  <p className="text-[#FE5B4A] uppercase text-sm">{person.usn}</p>
-                  <p className="text-[#ffffff] text-sm">{person.phone}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+        {/* Right Side Content */}
+        <div className="bg-[#000000] py-12 mx-[8vh] -ml-[10vh] max-h-[100vh] overflow-hidden">
+          <div className="max-w-[60vh] mx-auto py-[8vh] space-y-12 text-center">
+            {/* 4th Year Coordinators */}
+            <div className="space-y-5">
+              <h2 className="text-[3vh] font-bold tracking-tight text-[#FFEAAC]">
+                Meet our 4<sup className="align-super text-[1.5vh]">th</sup> Year Coordinators
+              </h2>
+            </div>
+            <ul
+              role="list"
+              className="space-y-[1vw] sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-[6vh]"
+            >
+              {fourthYearCoordinators.map((person) => (
+                <li
+                  key={person.name}
+                  className="relative bg-[#151515] pb-[.5vw] rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+                >
+                  <div className="relative">
+                    <img
+                      src={person.photo}
+                      alt=""
+                      className="mx-auto h-[9vw] w-[9vw] object-cover"
+                    />
+                    <a
+                      href={person.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-[.5vw] right-[.5vw]"
+                    >
+                      <img src={InstagramIcon} alt="Instagram" className="h-[1.5vw] w-[1.5vw]" />
+                    </a>
+                  </div>
+                  <div className="text-center mt-[.1vw] space-y-1">
+                    <h3 className="text-[#ffffff] font-semibold">{person.name}</h3>
+                    <p className="text-[#FE5B4A] uppercase text-sm">{person.usn}</p>
+                    <p className="text-[#ffffff] text-sm">{person.phone}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-          {/* 3rd Year Coordinators */}
-          <div className="space-y-5 pb-[1vw]">
-            <h2 className="text-[3vh] font-bold tracking-tight text-[#FFEAAC]">
-              Meet our 3<sup className="align-super text-[1.5vh]">rd</sup> Year Coordinators
-            </h2>
+            {/* 3rd Year Coordinators */}
+            <div className="space-y-5 pb-[1vw]">
+              <h2 className="text-[3vh] font-bold tracking-tight text-[#FFEAAC]">
+                Meet our 3<sup className="align-super text-[1.5vh]">rd</sup> Year Coordinators
+              </h2>
+            </div>
+            <ul
+              role="list"
+              className="space-y-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-[6vh]"
+            >
+              {thirdYearCoordinators.map((person) => (
+                <li
+                  key={person.name}
+                  className="relative bg-[#151515] pb-[.5vw] rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+                >
+                  <div className="relative">
+                    <img
+                      src={person.photo}
+                      alt=""
+                      className="mx-auto h-[9vw] w-[9vw] object-cover"
+                    />
+                    <a
+                      href={person.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-[.5vw] right-[.5vw]"
+                    >
+                      <img src={InstagramIcon} alt="Instagram" className="h-[1.5vw] w-[1.5vw]" />
+                    </a>
+                  </div>
+                  <div className="text-center mt-[.3vw] space-y-1">
+                    <h3 className="text-[#ffffff] font-semibold">{person.name}</h3>
+                    <p className="text-[#FE5B4A] uppercase text-sm">{person.usn}</p>
+                    <p className="text-[#ffffff] text-sm">{person.phone}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul
-            role="list"
-            className="space-y-8 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-[6vh]"
-          >
-            {thirdYearCoordinators.map((person) => (
-              <li key={person.name} className="relative bg-[#151515] pb-[.5vw] rounded-lg shadow-md">
-                <div className="relative">
-                  <img
-                    src={person.photo}
-                    alt=""
-                    className="mx-auto h-[9vw] w-[9vw]  object-cover"
-                  />
-                  <a
-                    href={person.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute top-[.5vw] right-[.5vw]"
-                  >
-                    <img src={InstagramIcon} alt="Instagram" className="h-[1.5vw] w-[1.5vw]" />
-                  </a>
-                </div>
-                <div className="text-center mt-[.3vw] space-y-1">
-                  <h3 className="text-[#ffffff] font-semibold">{person.name}</h3>
-                  <p className="text-[#FE5B4A] uppercase text-sm">{person.usn}</p>
-                  <p className="text-[#ffffff] text-sm">{person.phone}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
-    </div>
+    </>
   );
 }
-
-

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/gandabherunda.png";
 import "./Navbar.css";
@@ -17,11 +16,6 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/coordinators">
-            <button>Contact Us</button>
-          </Link>
-        </li>
-        <li>
           <Link to="/eventGallery">
             <button>Events</button>
           </Link>
@@ -29,6 +23,11 @@ function Navbar() {
         <li>
           <Link to="/tShirtPage">
             <button>T-Shirt</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/coordinators">
+            <button>Contact Us</button>
           </Link>
         </li>
       </ul>
