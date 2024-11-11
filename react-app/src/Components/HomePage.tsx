@@ -1,12 +1,14 @@
 import React from 'react';
+import Navbar from './navbar/Navbar';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      {/* <h1>Home Page</h1> */}
+      <Navbar></Navbar>
       <div>
-        <Link to="/coordinators">
+      <Link to="/coordinators">
           <div><button>Coordinators</button></div>
         </Link>
         <Link to="/eventPage">

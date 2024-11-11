@@ -1,4 +1,7 @@
+
 import InstagramIcon from '/src/assets/insta.svg'; // Import the Instagram SVG icon
+import Navbar from "./navbar/Navbar";
+import logo from '../assets/logo.jpg'; // Import the image from the assets folder
 
 const people = [
   {
@@ -134,3 +137,5 @@ export default function Coordinators() {
     </div>
   );
 }
+
+
