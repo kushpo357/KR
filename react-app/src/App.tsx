@@ -13,10 +13,12 @@ import Navbar from "./components/navbar/Navbar";
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Test />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/coordinators" element={<Coordinators />} />
-        <Route path="/eventPage" element={<EventPage />} />
+        {/* Dynamic route for each event */}
+        <Route path="/eventPage/:eventId" element={<EventPage />} />
         <Route path="/eventGallery" element={<EventsGallery />} />
         <Route path="/tShirtPage" element={<Tshirt />} />
         <Route path="/test" element={<Test />} />

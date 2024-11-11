@@ -257,15 +257,12 @@ const categories = [
 ];
 
 const tabs = [
-  { name: "Day 0", href: "#", day: "Day 0" },
-  { name: "Day 1", href: "#", day: "Day 1" },
-  { name: "Day 2", href: "#", day: "Day 2" },
-  // { name: 'Day4', href: '#', day: 'day4' },
+  { name: "Day 0", day: "Day 0" },
+  { name: "Day 1", day: "Day 1" },
+  { name: "Day 2", day: "Day 2" },
+  { name: "Day 4", day: "day4" },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function EventsGallery() {
   const [selectedDay, setSelectedDay] = useState("");
@@ -283,82 +280,51 @@ export default function EventsGallery() {
             Events of KR
           </h2>
 
-          {/* Mobile Tabs Dropdown */}
-          <div>
-            <div className="sm:hidden">
-              <label htmlFor="tabs" className="sr-only">
-                Select a tab
-              </label>
-              <select
-                id="tabs"
-                name="tabs"
-                className="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                value={selectedDay}
-                onChange={(e) => setSelectedDay(e.target.value)}
+          {/* Day Buttons */}
+          <div className="flex justify-center mt-4 space-x-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab.day}
+                onClick={() => setSelectedDay(tab.day)}
+                className={`px-4 py-2 rounded-md ${
+                  selectedDay === tab.day
+                    ? "bg-gray-900 text-white"
+                    : "bg-gray-200 text-gray-900"
+                } hover:bg-gray-300`}
               >
-                <option value="">All Events</option>
-                {tabs.map((tab) => (
-                  <option key={tab.name} value={tab.day}>
-                    {tab.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Desktop Tabs */}
-            <div className="hidden sm:block">
-              <nav className="flex space-x-4" aria-label="Tabs">
-                <button
-                  onClick={() => setSelectedDay("")}
-                  className={classNames(
-                    selectedDay === ""
-                      ? "bg-gray-100 text-gray-700"
-                      : "text-gray-500 hover:text-gray-700",
-                    "px-3 py-2 font-medium text-sm rounded-md"
-                  )}
-                  aria-current={selectedDay === "" ? "page" : undefined}
-                >
-                  All Events
-                </button>
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.name}
-                    onClick={() => setSelectedDay(tab.day)}
-                    className={classNames(
-                      selectedDay === tab.day
-                        ? "bg-gray-100 text-gray-700"
-                        : "text-gray-500 hover:text-gray-700",
-                      "px-3 py-2 font-medium text-sm rounded-md"
-                    )}
-                    aria-current={selectedDay === tab.day ? "page" : undefined}
-                  >
-                    {tab.name}
-                  </button>
-                ))}
-              </nav>
-            </div>
+                {tab.name}
+              </button>
+            ))}
+            <button
+              onClick={() => setSelectedDay("")}
+              className={`px-4 py-2 rounded-md ${
+                selectedDay === ""
+                  ? "bg-gray-900 text-white"
+                  : "bg-gray-200 text-gray-900"
+              } hover:bg-gray-300`}
+            >
+              All Days
+            </button>
           </div>
 
           {/* Categories Grid */}
           <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-5 lg:gap-x-8">
             {filteredCategories.length > 0 ? (
               filteredCategories.map((category) => (
-                <a
+                <Link
                   key={category.name}
-                  href={category.href}
+                  to={`/events/${category.name}`}
                   className="group block text-center"
                 >
                   <div
                     aria-hidden="true"
                     className="mt-2 rounded-lg overflow-hidden group-hover:opacity-75"
                   >
-                    <Link to="/eventPage">
-                      <img
-                        src={category.imageSrc}
-                        alt="google.com"
-                        className="w-full h-full object-cover"
-                      />
-                    </Link>
+                    <img
+                      src={category.imageSrc}
+                      alt={category.name}
+                      className="w-full h-full object-center object-cover sm:rounded-lg"
+                    />
                   </div>
                   <h3 className="mt-2 text-sm font-semibold text-gray-900">
                     {category.name}
@@ -366,7 +332,7 @@ export default function EventsGallery() {
                   <p className="text-xs text-gray-500 mb-4">
                     {category.description}
                   </p>
-                </a>
+                </Link>
               ))
             ) : (
               <p className="text-gray-500">No events for this day.</p>

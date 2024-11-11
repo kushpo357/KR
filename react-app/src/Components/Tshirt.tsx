@@ -4,7 +4,7 @@ import krtshirtImage from '../assets/tshirtkr.jpg';
 
 const product = {
   name: 'ಕನ್ನಡ Rajyotsava',
-  price: '₹350',
+  price: '₹360',
   images: [
     {
       id: 1,
@@ -71,9 +71,9 @@ export default function Tshirt() {
                 dangerouslySetInnerHTML={{ __html: product.description }}
               />
 
-              {/* Centered Buy Now Button with Animation */}
+              {/* Buy Now Button: Start on Desktop, Center on Mobile */}
               <motion.form
-                className="mt-10 flex justify-center"
+                className="mt-10 flex justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
