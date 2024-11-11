@@ -13,7 +13,7 @@ const product = {
     },
   ],
   description: `
-    <p>Get your merch now!</p>
+    <p>Get your Shirt now!</p>
   `,
 };
 
